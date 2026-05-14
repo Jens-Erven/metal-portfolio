@@ -1,19 +1,15 @@
 "use client";
 
 import {
-  BookOpenIcon,
-  BotIcon,
-  FrameIcon,
+  CalculatorIcon,
+  CoinsIcon,
   LayoutDashboardIcon,
-  MapIcon,
-  PieChartIcon,
-  Settings2Icon,
-  TerminalSquareIcon
+  ScaleIcon,
+  StoreIcon,
 } from "lucide-react";
 import * as React from "react";
 
 import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import { SidebarAppBrand } from "@/components/sidebar-app-brand";
 import {
@@ -24,7 +20,6 @@ import {
   SidebarRail
 } from "@/components/ui/sidebar";
 
-// This is sample data.
 const data = {
   navMain: [
     {
@@ -40,108 +35,50 @@ const data = {
       ]
     },
     {
-      title: "Playground",
-      url: "#",
-      icon: <TerminalSquareIcon />,
-      isActive: false,
+      title: "Compare Prices",
+      url: "/dashboard/compare",
+      icon: <ScaleIcon />,
       items: [
         {
-          title: "History",
-          url: "#"
-        },
-        {
-          title: "Starred",
-          url: "#"
-        },
-        {
-          title: "Settings",
-          url: "#"
+          title: "Dealer Comparison",
+          url: "/dashboard/compare"
         }
       ]
     },
     {
-      title: "Models",
-      url: "#",
-      icon: <BotIcon />,
+      title: "Products",
+      url: "/dashboard/products",
+      icon: <CoinsIcon />,
       items: [
         {
-          title: "Genesis",
-          url: "#"
-        },
-        {
-          title: "Explorer",
-          url: "#"
-        },
-        {
-          title: "Quantum",
-          url: "#"
+          title: "All Products",
+          url: "/dashboard/products"
         }
       ]
     },
     {
-      title: "Documentation",
-      url: "#",
-      icon: <BookOpenIcon />,
+      title: "Dealers",
+      url: "/dashboard/dealers",
+      icon: <StoreIcon />,
       items: [
         {
-          title: "Introduction",
-          url: "#"
-        },
-        {
-          title: "Get Started",
-          url: "#"
-        },
-        {
-          title: "Tutorials",
-          url: "#"
-        },
-        {
-          title: "Changelog",
-          url: "#"
+          title: "All Dealers",
+          url: "/dashboard/dealers"
         }
       ]
     },
     {
-      title: "Settings",
+      title: "Tools",
       url: "#",
-      icon: <Settings2Icon />,
+      icon: <CalculatorIcon />,
       items: [
         {
-          title: "General",
-          url: "#"
-        },
-        {
-          title: "Team",
-          url: "#"
-        },
-        {
-          title: "Billing",
-          url: "#"
-        },
-        {
-          title: "Limits",
-          url: "#"
+          title: "Tax Simulator",
+          url: "/dashboard/tax-simulator"
         }
       ]
-    }
+    },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: <FrameIcon />
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: <PieChartIcon />
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: <MapIcon />
-    }
-  ]
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -152,7 +89,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser />

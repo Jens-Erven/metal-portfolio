@@ -9,21 +9,21 @@ import { ConvexClientProvider } from "./ConvexClientProvider";
 
 const fontSans = Geist({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-sans"
 });
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-mono"
 });
 
 export const metadata: Metadata = {
   title: "Metal Portfolio",
-  description: "Portfolio app — log in to continue to your dashboard.",
+  description: "Portfolio app — log in to continue to your dashboard."
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
